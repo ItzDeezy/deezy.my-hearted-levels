@@ -13,7 +13,7 @@ static std::string getLevelKey(GJGameLevel* level) {
     if (!level) return "";
     int id = level->m_levelID;
     if (id > 0) return "id_" + std::to_string(id);
-    return "local_" + (level->m_levelName);
+    return fmt::format("local_{}", level->m_levelName);
 }
 
 
