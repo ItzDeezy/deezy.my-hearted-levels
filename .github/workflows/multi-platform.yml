@@ -1,5 +1,8 @@
 name: Build Geode Mod
 
+
+
+# custom build for my mod, deezy
 on:
   workflow_dispatch:
   push:
@@ -58,4 +61,6 @@ jobs:
       - uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: ${{ steps.build.outputs.build-output }}
+          files: artifacts/geode-build-win/deezy.my-hearted-levels.geode
+
+          
