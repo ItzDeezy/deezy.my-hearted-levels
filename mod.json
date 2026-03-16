@@ -12,6 +12,7 @@
 	"developer": "ItzDeezy",
 	"tags": ["offline", "interface", "utility"], 
 	"description": "Favorite Your Created Levels!",
+	"links": {"source": ""},
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0"
 	}
