@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - "**"
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -51,7 +53,7 @@ jobs:
       - uses: geode-sdk/build-geode-mod/combine@main
         id: build
 
-      - uses: actions/upload-artifact@v4
+      - uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          name: Build Output
-          path: ${{ steps.build.outputs.build-output }}
+          files: ${{ steps.build.outputs.build-output }}
